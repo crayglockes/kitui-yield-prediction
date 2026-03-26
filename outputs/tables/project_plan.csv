@@ -1,0 +1,24 @@
+Phase,Task,Owner,Start_Day,Duration,Deliverable,Start_Date,End_Date,Week
+Design,Data source audit & API testing,Solo,0,3,data_sources.md,2025-04-01,2025-04-04,1
+Design,Questionnaire design,Solo,2,3,questionnaire.md,2025-04-03,2025-04-06,1
+Design,Risk register & budget,Solo,4,2,risk_register.csv,2025-04-05,2025-04-07,1
+Design,Variable codebook,Solo,5,2,variable_codebook.csv,2025-04-06,2025-04-08,1
+Design,Repo scaffold & README,Solo,0,2,README.md,2025-04-01,2025-04-03,1
+Implement,Synthetic survey data (n=200),Solo,7,3,synthetic_survey.csv,2025-04-08,2025-04-11,2
+Implement,NASA POWER climate pull,Solo,9,2,nasa_power_kitui.csv,2025-04-10,2025-04-12,2
+Implement,CHIRPS rainfall pull,Solo,10,2,chirps_rainfall.csv,2025-04-11,2025-04-13,2
+Implement,SoilGrids soil pull,Solo,11,2,soilgrids_kitui.csv,2025-04-12,2025-04-14,2
+Implement,MODIS NDVI pull,Solo,12,3,ndvi_kitui.csv,2025-04-13,2025-04-16,2
+Implement,Data merging & preprocessing,Solo,14,4,merged_clean.csv,2025-04-15,2025-04-19,3
+Implement,Exploratory data analysis,Solo,17,3,eda_report.md,2025-04-18,2025-04-21,3
+Implement,Feature engineering,Solo,19,2,features_final.csv,2025-04-20,2025-04-22,3
+Implement,Modelling — MLR baseline,Solo,21,2,mlr_results.csv,2025-04-22,2025-04-24,4
+Implement,Modelling — LASSO,Solo,22,2,lasso_results.csv,2025-04-23,2025-04-25,4
+Implement,Modelling — Random Forest,Solo,23,3,rf_results.csv,2025-04-24,2025-04-27,4
+Implement,Modelling — XGBoost,Solo,25,3,xgb_results.csv,2025-04-26,2025-04-29,4
+Implement,Model comparison & selection,Solo,27,2,model_comparison.csv,2025-04-28,2025-04-30,4
+Implement,Choropleth yield maps,Solo,28,2,yield_maps.html,2025-04-29,2025-05-01,5
+Implement,Variable importance & PDP plots,Solo,29,2,importance_plots.png,2025-04-30,2025-05-02,5
+Implement,Interim report write-up,Solo,30,3,interim_report.md,2025-05-01,2025-05-04,5
+Implement,Final report write-up,Solo,55,7,final_report.md,2025-05-26,2025-06-02,8
+Implement,Presentation slides,Solo,62,3,slides.pptx,2025-06-02,2025-06-05,9

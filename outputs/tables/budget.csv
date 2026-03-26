@@ -1,0 +1,9 @@
+Item,Category,Unit_Cost_KES,Quantity,Basis,Total_KES
+Mobile data (3 months),Connectivity,500,3,Monthly,1500
+Google One storage upgrade (optional),Storage,0,1,One-time,0
+Printing — questionnaire (200 copies),Documentation,15,200,Per page,3000
+Printing — final report (5 copies),Documentation,40,5,Per copy,200
+Binding — final report,Documentation,80,5,Per copy,400
+USB flash drive (data backup),Equipment,500,1,One-time,500
+Research permit (NACOSTI),Compliance,2000,1,One-time,2000
+Contingency (10%),Buffer,1,1,Lump sum,760

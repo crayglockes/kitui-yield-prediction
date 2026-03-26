@@ -1,0 +1,29 @@
+variable,label,type,unit,source,range,notes
+farmer_id,Unique farmer ID,string,—,Synthetic,F001–F200,Primary key
+subcounty,Sub-county,categorical,—,Synthetic,5 levels,Kitui's 8 sub-counties; 5 sampled
+ward,Ward,categorical,—,Synthetic,20 levels,4 wards per sub-county
+lat,Latitude,float,decimal °,GPS/Synthetic,-1.25 to -0.50,WGS84
+lon,Longitude,float,decimal °,GPS/Synthetic,37.90 to 38.55,WGS84
+farm_size_ha,Total farm size,float,ha,Survey,0.25–5.0,Log-normal dist
+maize_area_ha,Area under maize,float,ha,Survey,0.1–3.0,≤ farm_size_ha
+bean_area_ha,Area under beans,float,ha,Survey,0.1–2.0,≤ farm_size_ha - maize_area
+fert_rate_kgha,Fertiliser rate,float,kg/ha,Survey,0–150,Zero-inflated; ~42% apply zero
+seed_type,Seed type,binary,—,Survey,"0=local,1=improved",35% use improved
+planting_week,ISO planting week,int,week,Survey,40–48,Short rains: Oct–Nov
+irrigation,Irrigation use,binary,—,Survey,"0=no,1=yes",~8% irrigate
+extension_access,Extension officer access,binary,—,Survey,"0=no,1=yes",~38% have access
+farmer_group,Farmer group member,binary,—,Survey,"0=no,1=yes",~45% in groups
+hh_size,Household size,int,persons,Survey,2–12,Mean ~5
+gender,Gender of household head,binary,—,Survey,"0=male,1=female",~43% female-headed
+education_yrs,Years of education,int,years,Survey,0–16,Mean ~7
+chirps_rain_mm,CHIRPS seasonal rainfall,float,mm,CHIRPS API,120–550,Oct–Dec season total
+nasa_tmax_c,NASA POWER max temp,float,°C,NASA POWER API,28–37,Monthly mean
+nasa_tmin_c,NASA POWER min temp,float,°C,NASA POWER API,15–22,Monthly mean
+nasa_srad,Solar radiation,float,MJ/m²/day,NASA POWER API,15–25,Monthly mean
+ndvi_mean,MODIS NDVI mean,float,index,MODIS MOD13Q1,0.10–0.65,Growing season composite
+soil_ph,Soil pH,float,pH,SoilGrids API,4.5–7.5,0–30cm depth
+soil_soc,Soil organic carbon,float,g/kg,SoilGrids API,3–45,0–30cm depth
+soil_clay_pct,Clay fraction,float,%,SoilGrids API,15–60,0–30cm depth
+soil_sand_pct,Sand fraction,float,%,SoilGrids API,15–65,0–30cm depth
+maize_yield_tha,Maize yield,float,t/ha,Derived,0.10–3.50,TARGET VARIABLE
+bean_yield_tha,Bean yield,float,t/ha,Derived,0.05–2.00,TARGET VARIABLE
