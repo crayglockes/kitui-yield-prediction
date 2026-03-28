@@ -1,0 +1,26 @@
+,0
+seed_type,0.23185445
+subcounty_Mwingi North,0.10306911
+ndvi_mean,0.070772536
+management_index,0.065362565
+irrigation,0.057503883
+planting_week,0.055449065
+planting_optimal,0.05036857
+extension_access,0.032438513
+subcounty_Mwingi Central,0.032079246
+fert_rate_kgha,0.028573174
+education_yrs,0.027028296
+soil_clay_pct,0.026561944
+tmin_c_mean,0.02652734
+tmax_c_mean,0.026502304
+subcounty_Kitui West,0.026012747
+subcounty_Mwingi West,0.02381362
+farm_size_ha,0.021580327
+soil_fertility_score,0.020753816
+farmer_group,0.019867271
+soil_soc_gkg,0.01865786
+gender,0.01782461
+soil_ph,0.017398687
+chirps_rain_mm,0.0
+climate_stress,0.0
+rain_adequacy,0.0
