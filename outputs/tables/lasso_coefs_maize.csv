@@ -1,0 +1,26 @@
+feature,coefficient,selected
+ndvi_mean,0.15430269457137213,True
+seed_type,0.11210779897018454,True
+irrigation,0.08455244446292094,True
+extension_access,0.0810819427099118,True
+management_index,0.0763122412247871,True
+subcounty_Mwingi West,-0.05878651611856653,True
+farmer_group,0.0367045545090409,True
+subcounty_Mwingi North,-0.025944680111966475,True
+planting_week,-0.023285855757939306,True
+gender,-0.02041687744981062,True
+planting_optimal,0.020330424674491192,True
+soil_clay_pct,0.017687692136432884,True
+subcounty_Kitui West,-0.014689054236780508,True
+farm_size_ha,-0.012814232903766182,True
+tmax_c_mean,-0.0,False
+fert_rate_kgha,-0.0,False
+chirps_rain_mm,0.0,False
+tmin_c_mean,-0.0,False
+climate_stress,-0.0,False
+soil_ph,0.0,False
+soil_soc_gkg,0.0,False
+soil_fertility_score,0.0,False
+rain_adequacy,0.0,False
+education_yrs,0.0,False
+subcounty_Mwingi Central,0.0,False
