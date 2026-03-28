@@ -1,0 +1,9 @@
+Crop,Model,RMSE_test,MAE_test,R2_test,CV_RMSE,Parameters,Best_R2,Best_RMSE
+Maize,MLR (OLS),0.2578,0.2088,0.4999,0.299,Intercept + β coefficients,,
+Maize,LASSO,0.2322,0.186,0.5944,0.2995,α=0.00933,✓,✓
+Maize,Random Forest,0.2461,0.1876,0.5443,0.3154,Tuned via GridSearchCV,,
+Maize,XGBoost,0.2644,0.22,0.4743,0.3142,Tuned via GridSearchCV,,
+Beans,MLR (OLS),0.1603,0.1223,0.6054,0.1901,Intercept + β coefficients,,
+Beans,LASSO,0.1547,0.1191,0.6325,0.1795,α=0.01322,✓,✓
+Beans,Random Forest,0.1812,0.141,0.4955,0.1911,Tuned via GridSearchCV,,
+Beans,XGBoost,0.1816,0.1451,0.4934,0.191,Tuned via GridSearchCV,,
