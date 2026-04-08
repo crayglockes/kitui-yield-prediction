@@ -3,8 +3,8 @@
 Dep. Variable:         bean_yield_tha   R-squared:                       0.647
 Model:                            OLS   Adj. R-squared:                  0.584
 Method:                 Least Squares   F-statistic:                     10.31
-Date:                Sat, 28 Mar 2026   Prob (F-statistic):           4.65e-18
-Time:                        08:48:10   Log-Likelihood:                 66.941
+Date:                Wed, 08 Apr 2026   Prob (F-statistic):           4.65e-18
+Time:                        18:39:23   Log-Likelihood:                 66.941
 No. Observations:                 140   AIC:                            -89.88
 Df Residuals:                     118   BIC:                            -25.17
 Df Model:                          21                                         

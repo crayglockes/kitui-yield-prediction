@@ -3,8 +3,8 @@
 Dep. Variable:        maize_yield_tha   R-squared:                       0.644
 Model:                            OLS   Adj. R-squared:                  0.580
 Method:                 Least Squares   F-statistic:                     10.15
-Date:                Sat, 28 Mar 2026   Prob (F-statistic):           8.00e-18
-Time:                        08:48:06   Log-Likelihood:                -5.3380
+Date:                Wed, 08 Apr 2026   Prob (F-statistic):           8.00e-18
+Time:                        18:39:18   Log-Likelihood:                -5.3380
 No. Observations:                 140   AIC:                             54.68
 Df Residuals:                     118   BIC:                             119.4
 Df Model:                          21                                         
