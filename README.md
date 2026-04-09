@@ -2,7 +2,7 @@
 
 **Author:**  
 **Programme:** B.Sc. Applied Statistics with Computing, Moi University  
-**Supervisor:**
+**Supervisor:**  
 **Academic Year:** 2025/2026  
 
 ## Project Overview
