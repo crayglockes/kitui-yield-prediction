@@ -1,9 +1,9 @@
 # Predictive Modelling for Maize and Bean Yields in Kitui County, Kenya
 
-**Author:** Your Full Name · Reg. No: Your Reg No  
+**Author:**  
 **Programme:** B.Sc. Applied Statistics with Computing, Moi University  
-**Supervisor:** Supervisor Name  
-**Academic Year:** 2024/2025  
+**Supervisor:**
+**Academic Year:** 2025/2026  
 
 ## Project Overview
 This capstone project develops and validates predictive models for maize and bean
