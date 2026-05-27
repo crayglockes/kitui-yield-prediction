@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b03a6034a48ac8be886e5788b0b3ff71 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+    
+    
+<div style="position: fixed; top: 10px; left: 50px; z-index: 1000;
+     background: white; padding: 10px; border-radius: 5px;
+     border: 2px solid #048A81; font-family: Arial;">
+  <b>Predicted Maize & Bean Yields</b><br>
+  Kitui County, Kenya — LASSO Model<br>
+  <small>Circle size ∝ sample size | Click for details</small>
+</div>
+    
+            <div class="folium-map" id="map_b03a6034a48ac8be886e5788b0b3ff71" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b03a6034a48ac8be886e5788b0b3ff71 = L.map(
+                "map_b03a6034a48ac8be886e5788b0b3ff71",
+                {
+                    center: [-0.9, 38.05],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 9,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0e09931aa99c262a4cdabfcd1b679f45 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0e09931aa99c262a4cdabfcd1b679f45.addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+            var circle_marker_083c263e3f0ebe0bf4817d14cc8f74ed = L.circleMarker(
+                [-1.176, 38.09],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4d7db8ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_57a9ca04a608f11c652dbeb8bd2202d9 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_7c5054e437045aa3c2447208001a10d1 = $(`<div id="html_7c5054e437045aa3c2447208001a10d1" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Central<br><b>Predicted Maize:</b> 2.03 t/ha<br><b>Predicted Bean:</b> 1.30 t/ha<br><b>Avg Fertiliser:</b> 44.3 kg/ha<br><b>n farmers:</b> 7</div>`)[0];
+                popup_57a9ca04a608f11c652dbeb8bd2202d9.setContent(html_7c5054e437045aa3c2447208001a10d1);
+            
+        
+
+        circle_marker_083c263e3f0ebe0bf4817d14cc8f74ed.bindPopup(popup_57a9ca04a608f11c652dbeb8bd2202d9)
+        ;
+
+        
+    
+    
+            circle_marker_083c263e3f0ebe0bf4817d14cc8f74ed.bindTooltip(
+                `<div>
+                     Central: 2.03 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db2278379bd6d3e31cd0801e177d2a3f = L.circleMarker(
+                [-0.89, 38.002],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fec880ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_1ddd5ea5705b69dd4cb02caffa3154ee = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_39d125dea307816f64bef5b94b4802af = $(`<div id="html_39d125dea307816f64bef5b94b4802af" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Ikutha<br><b>Predicted Maize:</b> 1.75 t/ha<br><b>Predicted Bean:</b> 1.08 t/ha<br><b>Avg Fertiliser:</b> 20.9 kg/ha<br><b>n farmers:</b> 8</div>`)[0];
+                popup_1ddd5ea5705b69dd4cb02caffa3154ee.setContent(html_39d125dea307816f64bef5b94b4802af);
+            
+        
+
+        circle_marker_db2278379bd6d3e31cd0801e177d2a3f.bindPopup(popup_1ddd5ea5705b69dd4cb02caffa3154ee)
+        ;
+
+        
+    
+    
+            circle_marker_db2278379bd6d3e31cd0801e177d2a3f.bindTooltip(
+                `<div>
+                     Ikutha: 1.75 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_97ffcf5a34f7bf65009c4bc37279b16d = L.circleMarker(
+                [-0.971, 37.912],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fd925cff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_3469d389f18b7685ed36b3e01af68a86 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_db8f8969bfcae0df0602b85ca3c5c36c = $(`<div id="html_db8f8969bfcae0df0602b85ca3c5c36c" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Kauwi<br><b>Predicted Maize:</b> 1.67 t/ha<br><b>Predicted Bean:</b> 1.09 t/ha<br><b>Avg Fertiliser:</b> 23.4 kg/ha<br><b>n farmers:</b> 15</div>`)[0];
+                popup_3469d389f18b7685ed36b3e01af68a86.setContent(html_db8f8969bfcae0df0602b85ca3c5c36c);
+            
+        
+
+        circle_marker_97ffcf5a34f7bf65009c4bc37279b16d.bindPopup(popup_3469d389f18b7685ed36b3e01af68a86)
+        ;
+
+        
+    
+    
+            circle_marker_97ffcf5a34f7bf65009c4bc37279b16d.bindTooltip(
+                `<div>
+                     Kauwi: 1.67 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4d4ca8ca61ebc779e35eca4bd83d817d = L.circleMarker(
+                [-1.06, 37.896],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_ea9a7beb882513f10ef087f5f6901e4f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1a503f146bdb0301104e8e69e082d9b9 = $(`<div id="html_1a503f146bdb0301104e8e69e082d9b9" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Kisasi<br><b>Predicted Maize:</b> 1.53 t/ha<br><b>Predicted Bean:</b> 1.00 t/ha<br><b>Avg Fertiliser:</b> 10.1 kg/ha<br><b>n farmers:</b> 8</div>`)[0];
+                popup_ea9a7beb882513f10ef087f5f6901e4f.setContent(html_1a503f146bdb0301104e8e69e082d9b9);
+            
+        
+
+        circle_marker_4d4ca8ca61ebc779e35eca4bd83d817d.bindPopup(popup_ea9a7beb882513f10ef087f5f6901e4f)
+        ;
+
+        
+    
+    
+            circle_marker_4d4ca8ca61ebc779e35eca4bd83d817d.bindTooltip(
+                `<div>
+                     Kisasi: 1.53 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7fdbb993486168bd7a3a9fd9adaa448e = L.circleMarker(
+                [-0.912, 38.037],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_be63aa965a9e515ac9717a6e57abc612 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d462d542c61008188ac1da6a03fe58aa = $(`<div id="html_d462d542c61008188ac1da6a03fe58aa" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Kivou<br><b>Predicted Maize:</b> 2.05 t/ha<br><b>Predicted Bean:</b> 1.34 t/ha<br><b>Avg Fertiliser:</b> 31.1 kg/ha<br><b>n farmers:</b> 8</div>`)[0];
+                popup_be63aa965a9e515ac9717a6e57abc612.setContent(html_d462d542c61008188ac1da6a03fe58aa);
+            
+        
+
+        circle_marker_7fdbb993486168bd7a3a9fd9adaa448e.bindPopup(popup_be63aa965a9e515ac9717a6e57abc612)
+        ;
+
+        
+    
+    
+            circle_marker_7fdbb993486168bd7a3a9fd9adaa448e.bindTooltip(
+                `<div>
+                     Kivou: 2.05 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e63917770ed36a2561edec5590ac611b = L.circleMarker(
+                [-1.191, 38.042],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdb171ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_bc0e3ddcafe770f3473313338daf61ba = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3a19d60bbeb32532825e1a11dd38f959 = $(`<div id="html_3a19d60bbeb32532825e1a11dd38f959" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Kyangwithya East<br><b>Predicted Maize:</b> 1.72 t/ha<br><b>Predicted Bean:</b> 1.28 t/ha<br><b>Avg Fertiliser:</b> 25.8 kg/ha<br><b>n farmers:</b> 7</div>`)[0];
+                popup_bc0e3ddcafe770f3473313338daf61ba.setContent(html_3a19d60bbeb32532825e1a11dd38f959);
+            
+        
+
+        circle_marker_e63917770ed36a2561edec5590ac611b.bindPopup(popup_bc0e3ddcafe770f3473313338daf61ba)
+        ;
+
+        
+    
+    
+            circle_marker_e63917770ed36a2561edec5590ac611b.bindTooltip(
+                `<div>
+                     Kyangwithya East: 1.72 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3083ed674fce25d8f64f3baebc709297 = L.circleMarker(
+                [-1.134, 37.96],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fd925cff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_b0d2237defb34752732708eae99e8020 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8bd283dc477de2cf5435efecafa1db38 = $(`<div id="html_8bd283dc477de2cf5435efecafa1db38" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Kyangwithya West<br><b>Predicted Maize:</b> 1.67 t/ha<br><b>Predicted Bean:</b> 1.05 t/ha<br><b>Avg Fertiliser:</b> 11.3 kg/ha<br><b>n farmers:</b> 9</div>`)[0];
+                popup_b0d2237defb34752732708eae99e8020.setContent(html_8bd283dc477de2cf5435efecafa1db38);
+            
+        
+
+        circle_marker_3083ed674fce25d8f64f3baebc709297.bindPopup(popup_b0d2237defb34752732708eae99e8020)
+        ;
+
+        
+    
+    
+            circle_marker_3083ed674fce25d8f64f3baebc709297.bindTooltip(
+                `<div>
+                     Kyangwithya West: 1.67 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8a1f3168342edbb72ed37ba3eea4cc6a = L.circleMarker(
+                [-0.898, 38.074],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#88b6d7ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_f554119b939e3730eeaafe58fff99e89 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9b60d78572a94b05c33b25b2a93869a8 = $(`<div id="html_9b60d78572a94b05c33b25b2a93869a8" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Kyuso<br><b>Predicted Maize:</b> 1.94 t/ha<br><b>Predicted Bean:</b> 1.20 t/ha<br><b>Avg Fertiliser:</b> 8.2 kg/ha<br><b>n farmers:</b> 10</div>`)[0];
+                popup_f554119b939e3730eeaafe58fff99e89.setContent(html_9b60d78572a94b05c33b25b2a93869a8);
+            
+        
+
+        circle_marker_8a1f3168342edbb72ed37ba3eea4cc6a.bindPopup(popup_f554119b939e3730eeaafe58fff99e89)
+        ;
+
+        
+    
+    
+            circle_marker_8a1f3168342edbb72ed37ba3eea4cc6a.bindTooltip(
+                `<div>
+                     Kyuso: 1.94 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_54e97bfcea4948adba50cbf1a69d3e07 = L.circleMarker(
+                [-1.085, 37.954],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1dc99ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_9ae7910146da3213fbb5c18f9fddac29 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_507f2d8a46124c5e8ca9aa9cb702a7e3 = $(`<div id="html_507f2d8a46124c5e8ca9aa9cb702a7e3" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Mbitini<br><b>Predicted Maize:</b> 1.81 t/ha<br><b>Predicted Bean:</b> 1.13 t/ha<br><b>Avg Fertiliser:</b> 19.8 kg/ha<br><b>n farmers:</b> 8</div>`)[0];
+                popup_9ae7910146da3213fbb5c18f9fddac29.setContent(html_507f2d8a46124c5e8ca9aa9cb702a7e3);
+            
+        
+
+        circle_marker_54e97bfcea4948adba50cbf1a69d3e07.bindPopup(popup_9ae7910146da3213fbb5c18f9fddac29)
+        ;
+
+        
+    
+    
+            circle_marker_54e97bfcea4948adba50cbf1a69d3e07.bindTooltip(
+                `<div>
+                     Mbitini: 1.81 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9aef52386cd27da8d9d4ac9b9805b164 = L.circleMarker(
+                [-0.897, 37.938],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ec6443ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_d795dc1b297af8bb6264e8bb2d8d1a1a = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a4ea14290e21b75f3ff6ff3d9e6a18a6 = $(`<div id="html_a4ea14290e21b75f3ff6ff3d9e6a18a6" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Mui<br><b>Predicted Maize:</b> 1.60 t/ha<br><b>Predicted Bean:</b> 0.94 t/ha<br><b>Avg Fertiliser:</b> 18.1 kg/ha<br><b>n farmers:</b> 8</div>`)[0];
+                popup_d795dc1b297af8bb6264e8bb2d8d1a1a.setContent(html_a4ea14290e21b75f3ff6ff3d9e6a18a6);
+            
+        
+
+        circle_marker_9aef52386cd27da8d9d4ac9b9805b164.bindPopup(popup_d795dc1b297af8bb6264e8bb2d8d1a1a)
+        ;
+
+        
+    
+    
+            circle_marker_9aef52386cd27da8d9d4ac9b9805b164.bindTooltip(
+                `<div>
+                     Mui: 1.60 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ef3b8b050d3e00025c454e0b2392857 = L.circleMarker(
+                [-1.175, 38.017],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#baccbfff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.2, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_98c8b99363cfc8b3775b8dea6f1fc36b = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8976933f5f6251a070d875ddabebda1a = $(`<div id="html_8976933f5f6251a070d875ddabebda1a" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Mulango<br><b>Predicted Maize:</b> 1.87 t/ha<br><b>Predicted Bean:</b> 1.19 t/ha<br><b>Avg Fertiliser:</b> 30.0 kg/ha<br><b>n farmers:</b> 17</div>`)[0];
+                popup_98c8b99363cfc8b3775b8dea6f1fc36b.setContent(html_8976933f5f6251a070d875ddabebda1a);
+            
+        
+
+        circle_marker_4ef3b8b050d3e00025c454e0b2392857.bindPopup(popup_98c8b99363cfc8b3775b8dea6f1fc36b)
+        ;
+
+        
+    
+    
+            circle_marker_4ef3b8b050d3e00025c454e0b2392857.bindTooltip(
+                `<div>
+                     Mulango: 1.87 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b5a98ec25fbe8d85d712304ca37a46cc = L.circleMarker(
+                [-1.09, 37.923],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4d7db8ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_d33ae1d0cc78439c702b6f38a238d6b5 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4b202b854f66980ff06f5ec795ff9689 = $(`<div id="html_4b202b854f66980ff06f5ec795ff9689" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Mutonguni<br><b>Predicted Maize:</b> 2.03 t/ha<br><b>Predicted Bean:</b> 1.31 t/ha<br><b>Avg Fertiliser:</b> 46.3 kg/ha<br><b>n farmers:</b> 11</div>`)[0];
+                popup_d33ae1d0cc78439c702b6f38a238d6b5.setContent(html_4b202b854f66980ff06f5ec795ff9689);
+            
+        
+
+        circle_marker_b5a98ec25fbe8d85d712304ca37a46cc.bindPopup(popup_d33ae1d0cc78439c702b6f38a238d6b5)
+        ;
+
+        
+    
+    
+            circle_marker_b5a98ec25fbe8d85d712304ca37a46cc.bindTooltip(
+                `<div>
+                     Mutonguni: 2.03 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e288c95469a89e798a2404ae7c07a4f1 = L.circleMarker(
+                [-0.92, 38.09],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#afc8c7ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_0375cc571e2e4d9a9f6c75b051ebd1b7 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_54f13ed2278ae48b0c279e4a0a6bef07 = $(`<div id="html_54f13ed2278ae48b0c279e4a0a6bef07" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Ngomeni<br><b>Predicted Maize:</b> 1.88 t/ha<br><b>Predicted Bean:</b> 1.17 t/ha<br><b>Avg Fertiliser:</b> 24.9 kg/ha<br><b>n farmers:</b> 13</div>`)[0];
+                popup_0375cc571e2e4d9a9f6c75b051ebd1b7.setContent(html_54f13ed2278ae48b0c279e4a0a6bef07);
+            
+        
+
+        circle_marker_e288c95469a89e798a2404ae7c07a4f1.bindPopup(popup_0375cc571e2e4d9a9f6c75b051ebd1b7)
+        ;
+
+        
+    
+    
+            circle_marker_e288c95469a89e798a2404ae7c07a4f1.bindTooltip(
+                `<div>
+                     Ngomeni: 1.88 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4c9ef601342af8ec498dd397bb95eaff = L.circleMarker(
+                [-0.621, 38.17],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e44f37ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_bc0e9aedd6b3d31a0918645e095cd238 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4e8ceee9141c12650de87bf0976d15d1 = $(`<div id="html_4e8ceee9141c12650de87bf0976d15d1" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Nguni<br><b>Predicted Maize:</b> 1.58 t/ha<br><b>Predicted Bean:</b> 1.06 t/ha<br><b>Avg Fertiliser:</b> 10.8 kg/ha<br><b>n farmers:</b> 12</div>`)[0];
+                popup_bc0e9aedd6b3d31a0918645e095cd238.setContent(html_4e8ceee9141c12650de87bf0976d15d1);
+            
+        
+
+        circle_marker_4c9ef601342af8ec498dd397bb95eaff.bindPopup(popup_bc0e9aedd6b3d31a0918645e095cd238)
+        ;
+
+        
+    
+    
+            circle_marker_4c9ef601342af8ec498dd397bb95eaff.bindTooltip(
+                `<div>
+                     Nguni: 1.58 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dc49a473a4ecdd4670ba8b95d772903c = L.circleMarker(
+                [-0.913, 38.12],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e4d8a2ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_272437843743cda739dee3eeaa5e1220 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_24ac7c9822d858a956d41775f0bc33fe = $(`<div id="html_24ac7c9822d858a956d41775f0bc33fe" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Nguutani<br><b>Predicted Maize:</b> 1.82 t/ha<br><b>Predicted Bean:</b> 1.24 t/ha<br><b>Avg Fertiliser:</b> 31.6 kg/ha<br><b>n farmers:</b> 9</div>`)[0];
+                popup_272437843743cda739dee3eeaa5e1220.setContent(html_24ac7c9822d858a956d41775f0bc33fe);
+            
+        
+
+        circle_marker_dc49a473a4ecdd4670ba8b95d772903c.bindPopup(popup_272437843743cda739dee3eeaa5e1220)
+        ;
+
+        
+    
+    
+            circle_marker_dc49a473a4ecdd4670ba8b95d772903c.bindTooltip(
+                `<div>
+                     Nguutani: 1.82 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ccbfc4367e9c3a3f3758c6cfa6a3f9d6 = L.circleMarker(
+                [-0.886, 37.959],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#de4030ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.2, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_3d804bbb6e010b2a2a374be760db5ff1 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8bb0a96391fc4e18769c534766616a5c = $(`<div id="html_8bb0a96391fc4e18769c534766616a5c" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Nuu<br><b>Predicted Maize:</b> 1.56 t/ha<br><b>Predicted Bean:</b> 1.02 t/ha<br><b>Avg Fertiliser:</b> 17.4 kg/ha<br><b>n farmers:</b> 17</div>`)[0];
+                popup_3d804bbb6e010b2a2a374be760db5ff1.setContent(html_8bb0a96391fc4e18769c534766616a5c);
+            
+        
+
+        circle_marker_ccbfc4367e9c3a3f3758c6cfa6a3f9d6.bindPopup(popup_3d804bbb6e010b2a2a374be760db5ff1)
+        ;
+
+        
+    
+    
+            circle_marker_ccbfc4367e9c3a3f3758c6cfa6a3f9d6.bindTooltip(
+                `<div>
+                     Nuu: 1.56 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89d084881148b9e85354708d757ebbf4 = L.circleMarker(
+                [-0.634, 38.114],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f3754cff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_a4d4f862ba6bb7b5ba3f88c886194694 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_76d93e8038611a98ab0baefabf7a6e88 = $(`<div id="html_76d93e8038611a98ab0baefabf7a6e88" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Tharaka<br><b>Predicted Maize:</b> 1.63 t/ha<br><b>Predicted Bean:</b> 1.01 t/ha<br><b>Avg Fertiliser:</b> 8.7 kg/ha<br><b>n farmers:</b> 7</div>`)[0];
+                popup_a4d4f862ba6bb7b5ba3f88c886194694.setContent(html_76d93e8038611a98ab0baefabf7a6e88);
+            
+        
+
+        circle_marker_89d084881148b9e85354708d757ebbf4.bindPopup(popup_a4d4f862ba6bb7b5ba3f88c886194694)
+        ;
+
+        
+    
+    
+            circle_marker_89d084881148b9e85354708d757ebbf4.bindTooltip(
+                `<div>
+                     Tharaka: 1.63 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9ea22703607604d6d6c5495249539ba = L.circleMarker(
+                [-1.157, 38.025],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e0d7a5ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_c6a8f22e16fe8bac6fb49cb31d0d74fc = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0c039681b4f211f3d4f12ecc491c6f4e = $(`<div id="html_0c039681b4f211f3d4f12ecc491c6f4e" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Township<br><b>Predicted Maize:</b> 1.83 t/ha<br><b>Predicted Bean:</b> 1.22 t/ha<br><b>Avg Fertiliser:</b> 24.9 kg/ha<br><b>n farmers:</b> 5</div>`)[0];
+                popup_c6a8f22e16fe8bac6fb49cb31d0d74fc.setContent(html_0c039681b4f211f3d4f12ecc491c6f4e);
+            
+        
+
+        circle_marker_d9ea22703607604d6d6c5495249539ba.bindPopup(popup_c6a8f22e16fe8bac6fb49cb31d0d74fc)
+        ;
+
+        
+    
+    
+            circle_marker_d9ea22703607604d6d6c5495249539ba.bindTooltip(
+                `<div>
+                     Township: 1.83 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4defde1ee753b0a4757d7de72ab7bdff = L.circleMarker(
+                [-0.67, 38.054],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdb171ff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_a9e9896fe7a9cbfb2b6e36a8f471038c = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_98c7d8dea4d7c9410c6afe9ccefbdc19 = $(`<div id="html_98c7d8dea4d7c9410c6afe9ccefbdc19" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Tseikuru<br><b>Predicted Maize:</b> 1.72 t/ha<br><b>Predicted Bean:</b> 1.11 t/ha<br><b>Avg Fertiliser:</b> 20.4 kg/ha<br><b>n farmers:</b> 5</div>`)[0];
+                popup_a9e9896fe7a9cbfb2b6e36a8f471038c.setContent(html_98c7d8dea4d7c9410c6afe9ccefbdc19);
+            
+        
+
+        circle_marker_4defde1ee753b0a4757d7de72ab7bdff.bindPopup(popup_a9e9896fe7a9cbfb2b6e36a8f471038c)
+        ;
+
+        
+    
+    
+            circle_marker_4defde1ee753b0a4757d7de72ab7bdff.bindTooltip(
+                `<div>
+                     Tseikuru: 1.72 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4f6bf1a2dbc925901ee4ff3c2563939a = L.circleMarker(
+                [-0.675, 38.085],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e6543aff", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.6, "stroke": true, "weight": 3}
+            ).addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+        
+    
+        var popup_fcfbb9052a60af9134c6d52752d7fe1b = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1128bcafaa0f9c4817b01c744076172e = $(`<div id="html_1128bcafaa0f9c4817b01c744076172e" style="width: 100.0%; height: 100.0%;"><b>Ward:</b> Waita<br><b>Predicted Maize:</b> 1.58 t/ha<br><b>Predicted Bean:</b> 0.96 t/ha<br><b>Avg Fertiliser:</b> 22.7 kg/ha<br><b>n farmers:</b> 16</div>`)[0];
+                popup_fcfbb9052a60af9134c6d52752d7fe1b.setContent(html_1128bcafaa0f9c4817b01c744076172e);
+            
+        
+
+        circle_marker_4f6bf1a2dbc925901ee4ff3c2563939a.bindPopup(popup_fcfbb9052a60af9134c6d52752d7fe1b)
+        ;
+
+        
+    
+    
+            circle_marker_4f6bf1a2dbc925901ee4ff3c2563939a.bindTooltip(
+                `<div>
+                     Waita: 1.58 t/ha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+    var color_map_37fd4ddadcce398fb6063814fefffe2b = {};
+
+    
+    color_map_37fd4ddadcce398fb6063814fefffe2b.color = d3.scale.threshold()
+              .domain([1.533, 1.5340320641282563, 1.535064128256513, 1.5360961923847694, 1.537128256513026, 1.5381603206412824, 1.539192384769539, 1.5402244488977954, 1.541256513026052, 1.5422885771543084, 1.543320641282565, 1.5443527054108215, 1.545384769539078, 1.5464168336673345, 1.5474488977955911, 1.5484809619238475, 1.5495130260521042, 1.5505450901803606, 1.5515771543086172, 1.5526092184368736, 1.5536412825651302, 1.5546733466933866, 1.5557054108216433, 1.5567374749498997, 1.5577695390781563, 1.5588016032064127, 1.5598336673346693, 1.5608657314629257, 1.5618977955911824, 1.5629298597194388, 1.5639619238476954, 1.5649939879759518, 1.5660260521042084, 1.5670581162324648, 1.5680901803607215, 1.5691222444889779, 1.5701543086172345, 1.571186372745491, 1.5722184368737475, 1.573250501002004, 1.5742825651302605, 1.575314629258517, 1.5763466933867736, 1.57737875751503, 1.5784108216432866, 1.579442885771543, 1.5804749498997994, 1.581507014028056, 1.5825390781563125, 1.583571142284569, 1.5846032064128255, 1.585635270541082, 1.5866673346693385, 1.5876993987975951, 1.5887314629258515, 1.5897635270541082, 1.5907955911823646, 1.5918276553106212, 1.5928597194388776, 1.5938917835671342, 1.5949238476953906, 1.5959559118236473, 1.5969879759519037, 1.5980200400801603, 1.5990521042084167, 1.6000841683366733, 1.6011162324649297, 1.6021482965931864, 1.6031803607214428, 1.6042124248496994, 1.6052444889779558, 1.6062765531062124, 1.6073086172344688, 1.6083406813627255, 1.6093727454909819, 1.6104048096192385, 1.611436873747495, 1.6124689378757515, 1.613501002004008, 1.6145330661322645, 1.615565130260521, 1.6165971943887776, 1.617629258517034, 1.6186613226452906, 1.619693386773547, 1.6207254509018036, 1.62175751503006, 1.6227895791583167, 1.623821643286573, 1.6248537074148297, 1.6258857715430861, 1.6269178356713425, 1.6279498997995991, 1.6289819639278555, 1.6300140280561122, 1.6310460921843686, 1.6320781563126252, 1.6331102204408816, 1.6341422845691382, 1.6351743486973946, 1.6362064128256513, 1.6372384769539077, 1.6382705410821643, 1.6393026052104207, 1.6403346693386773, 1.6413667334669337, 1.6423987975951904, 1.6434308617234468, 1.6444629258517034, 1.6454949899799598, 1.6465270541082164, 1.6475591182364728, 1.6485911823647295, 1.6496232464929859, 1.6506553106212425, 1.651687374749499, 1.6527194388777555, 1.653751503006012, 1.6547835671342686, 1.655815631262525, 1.6568476953907816, 1.657879759519038, 1.6589118236472946, 1.659943887775551, 1.6609759519038076, 1.662008016032064, 1.6630400801603207, 1.664072144288577, 1.6651042084168337, 1.6661362725450901, 1.6671683366733467, 1.6682004008016031, 1.6692324649298595, 1.6702645290581162, 1.6712965931863728, 1.6723286573146292, 1.6733607214428856, 1.6743927855711422, 1.6754248496993989, 1.6764569138276553, 1.6774889779559117, 1.6785210420841683, 1.679553106212425, 1.6805851703406813, 1.6816172344689377, 1.6826492985971944, 1.6836813627254508, 1.6847134268537074, 1.6857454909819638, 1.6867775551102204, 1.6878096192384768, 1.6888416833667335, 1.6898737474949899, 1.6909058116232465, 1.691937875751503, 1.6929699398797595, 1.694002004008016, 1.6950340681362726, 1.696066132264529, 1.6970981963927856, 1.698130260521042, 1.6991623246492986, 1.700194388777555, 1.7012264529058116, 1.702258517034068, 1.7032905811623247, 1.704322645290581, 1.7053547094188377, 1.7063867735470941, 1.7074188376753507, 1.7084509018036071, 1.7094829659318638, 1.7105150300601202, 1.7115470941883768, 1.7125791583166332, 1.7136112224448898, 1.7146432865731462, 1.7156753507014026, 1.7167074148296593, 1.717739478957916, 1.7187715430861723, 1.7198036072144287, 1.7208356713426853, 1.721867735470942, 1.7228997995991984, 1.7239318637274548, 1.7249639278557114, 1.7259959919839678, 1.7270280561122244, 1.7280601202404808, 1.7290921843687375, 1.7301242484969939, 1.7311563126252505, 1.732188376753507, 1.7332204408817635, 1.73425250501002, 1.7352845691382766, 1.736316633266533, 1.7373486973947896, 1.738380761523046, 1.7394128256513026, 1.740444889779559, 1.7414769539078157, 1.742509018036072, 1.7435410821643287, 1.744573146292585, 1.7456052104208417, 1.7466372745490981, 1.7476693386773547, 1.7487014028056111, 1.7497334669338678, 1.7507655310621242, 1.7517975951903808, 1.7528296593186372, 1.7538617234468938, 1.7548937875751502, 1.7559258517034069, 1.7569579158316633, 1.75798997995992, 1.7590220440881763, 1.760054108216433, 1.7610861723446893, 1.7621182364729457, 1.7631503006012024, 1.764182364729459, 1.7652144288577154, 1.7662464929859718, 1.7672785571142284, 1.768310621242485, 1.7693426853707415, 1.7703747494989979, 1.7714068136272545, 1.7724388777555111, 1.7734709418837675, 1.774503006012024, 1.7755350701402806, 1.7765671342685372, 1.7775991983967936, 1.77863126252505, 1.7796633266533066, 1.780695390781563, 1.7817274549098197, 1.782759519038076, 1.7837915831663327, 1.784823647294589, 1.7858557114228457, 1.7868877755511021, 1.7879198396793587, 1.7889519038076152, 1.7899839679358718, 1.7910160320641282, 1.7920480961923848, 1.7930801603206412, 1.7941122244488978, 1.7951442885771542, 1.7961763527054109, 1.7972084168336673, 1.798240480961924, 1.7992725450901803, 1.8003046092184367, 1.8013366733466933, 1.80236873747495, 1.8034008016032064, 1.8044328657314628, 1.8054649298597194, 1.806496993987976, 1.8075290581162324, 1.8085611222444888, 1.8095931863727455, 1.810625250501002, 1.8116573146292585, 1.812689378757515, 1.8137214428857715, 1.8147535070140282, 1.8157855711422846, 1.816817635270541, 1.8178496993987976, 1.8188817635270542, 1.8199138276553106, 1.820945891783567, 1.8219779559118237, 1.82301002004008, 1.8240420841683367, 1.825074148296593, 1.8261062124248497, 1.8271382765531061, 1.8281703406813627, 1.8292024048096192, 1.8302344689378758, 1.8312665330661322, 1.8322985971943888, 1.8333306613226452, 1.8343627254509018, 1.8353947895791582, 1.8364268537074149, 1.8374589178356713, 1.838490981963928, 1.8395230460921843, 1.840555110220441, 1.8415871743486973, 1.8426192384769537, 1.8436513026052104, 1.844683366733467, 1.8457154308617234, 1.8467474949899798, 1.8477795591182364, 1.848811623246493, 1.8498436873747495, 1.8508757515030059, 1.8519078156312625, 1.8529398797595191, 1.8539719438877755, 1.855004008016032, 1.8560360721442886, 1.8570681362725452, 1.8581002004008016, 1.859132264529058, 1.8601643286573146, 1.8611963927855713, 1.8622284569138277, 1.863260521042084, 1.8642925851703407, 1.8653246492985973, 1.8663567134268537, 1.8673887775551101, 1.8684208416833668, 1.8694529058116234, 1.8704849699398798, 1.8715170340681362, 1.8725490981963928, 1.8735811623246494, 1.8746132264529058, 1.8756452905811623, 1.8766773547094189, 1.8777094188376753, 1.878741482965932, 1.8797735470941883, 1.880805611222445, 1.8818376753507013, 1.882869739478958, 1.8839018036072144, 1.884933867735471, 1.8859659318637274, 1.886997995991984, 1.8880300601202404, 1.889062124248497, 1.8900941883767535, 1.89112625250501, 1.8921583166332665, 1.8931903807615231, 1.8942224448897795, 1.8952545090180362, 1.8962865731462926, 1.897318637274549, 1.8983507014028056, 1.8993827655310622, 1.9004148296593186, 1.901446893787575, 1.9024789579158317, 1.9035110220440883, 1.9045430861723447, 1.905575150300601, 1.9066072144288577, 1.9076392785571143, 1.9086713426853708, 1.9097034068136272, 1.9107354709418838, 1.9117675350701404, 1.9127995991983968, 1.9138316633266532, 1.9148637274549098, 1.9158957915831665, 1.9169278557114229, 1.9179599198396793, 1.918991983967936, 1.9200240480961925, 1.921056112224449, 1.9220881763527053, 1.923120240480962, 1.9241523046092186, 1.925184368737475, 1.9262164328657314, 1.927248496993988, 1.9282805611222447, 1.929312625250501, 1.9303446893787575, 1.931376753507014, 1.9324088176352705, 1.9334408817635271, 1.9344729458917835, 1.9355050100200402, 1.9365370741482966, 1.9375691382765532, 1.9386012024048096, 1.9396332665330662, 1.9406653306613226, 1.9416973947895793, 1.9427294589178357, 1.9437615230460923, 1.9447935871743487, 1.9458256513026053, 1.9468577154308617, 1.9478897795591184, 1.9489218436873748, 1.9499539078156314, 1.9509859719438878, 1.9520180360721442, 1.9530501002004008, 1.9540821643286574, 1.9551142284569138, 1.9561462925851703, 1.9571783567134269, 1.9582104208416835, 1.95924248496994, 1.9602745490981963, 1.961306613226453, 1.9623386773547096, 1.963370741482966, 1.9644028056112224, 1.965434869739479, 1.9664669338677354, 1.967498997995992, 1.9685310621242484, 1.969563126252505, 1.9705951903807615, 1.971627254509018, 1.9726593186372745, 1.9736913827655311, 1.9747234468937875, 1.9757555110220442, 1.9767875751503006, 1.9778196392785572, 1.9788517034068136, 1.9798837675350702, 1.9809158316633266, 1.9819478957915833, 1.9829799599198397, 1.9840120240480963, 1.9850440881763527, 1.9860761523046093, 1.9871082164328657, 1.9881402805611224, 1.9891723446893788, 1.9902044088176354, 1.9912364729458918, 1.9922685370741484, 1.9933006012024048, 1.9943326653306614, 1.9953647294589179, 1.9963967935871745, 1.9974288577154309, 1.9984609218436873, 1.999492985971944, 2.0005250501002005, 2.001557114228457, 2.0025891783567134, 2.0036212424849698, 2.0046533066132266, 2.005685370741483, 2.0067174348697394, 2.0077494989979963, 2.0087815631262527, 2.009813627254509, 2.0108456913827655, 2.011877755511022, 2.0129098196392787, 2.013941883767535, 2.0149739478957915, 2.0160060120240484, 2.017038076152305, 2.018070140280561, 2.0191022044088176, 2.020134268537074, 2.021166332665331, 2.0221983967935873, 2.0232304609218437, 2.0242625250501, 2.025294589178357, 2.0263266533066133, 2.0273587174348697, 2.028390781563126, 2.029422845691383, 2.0304549098196394, 2.031486973947896, 2.032519038076152, 2.0335511022044086, 2.0345831663326654, 2.035615230460922, 2.0366472945891783, 2.037679358717435, 2.0387114228456915, 2.039743486973948, 2.0407755511022043, 2.0418076152304607, 2.0428396793587176, 2.043871743486974, 2.0449038076152304, 2.0459358717434872, 2.0469679358717436, 2.048])
+              .range(['#d73027ff', '#d83027ff', '#d83127ff', '#d83228ff', '#d93328ff', '#d93329ff', '#d93429ff', '#d93529ff', '#da362aff', '#da362aff', '#da372bff', '#db382bff', '#db392bff', '#db392cff', '#dc3a2cff', '#dc3b2dff', '#dc3c2dff', '#dc3c2dff', '#dd3d2eff', '#dd3e2eff', '#dd3f2fff', '#de3f2fff', '#de4030ff', '#de4130ff', '#de4230ff', '#df4231ff', '#df4331ff', '#df4432ff', '#e04532ff', '#e04532ff', '#e04633ff', '#e14733ff', '#e14834ff', '#e14834ff', '#e14934ff', '#e24a35ff', '#e24b35ff', '#e24b36ff', '#e34c36ff', '#e34d36ff', '#e34e37ff', '#e44e37ff', '#e44f38ff', '#e45038ff', '#e45138ff', '#e55139ff', '#e55239ff', '#e5533aff', '#e6543aff', '#e6543aff', '#e6553bff', '#e7563bff', '#e7573cff', '#e7573cff', '#e7583cff', '#e8593dff', '#e85a3dff', '#e85a3eff', '#e95b3eff', '#e95c3eff', '#e95d3fff', '#ea5d3fff', '#ea5e40ff', '#ea5f40ff', '#ea6040ff', '#eb6041ff', '#eb6141ff', '#eb6242ff', '#ec6342ff', '#ec6342ff', '#ec6443ff', '#ec6543ff', '#ed6644ff', '#ed6644ff', '#ed6744ff', '#ee6845ff', '#ee6945ff', '#ee6946ff', '#ef6a46ff', '#ef6b46ff', '#ef6c47ff', '#ef6c47ff', '#f06d48ff', '#f06e48ff', '#f06f48ff', '#f16f49ff', '#f17049ff', '#f1714aff', '#f2724aff', '#f2724aff', '#f2734bff', '#f2744bff', '#f3754cff', '#f3754cff', '#f3764cff', '#f4774dff', '#f4784dff', '#f4784eff', '#f5794eff', '#f57a4eff', '#f57b4fff', '#f57b4fff', '#f67c50ff', '#f67d50ff', '#f67e50ff', '#f77e51ff', '#f77f51ff', '#f78052ff', '#f88152ff', '#f88153ff', '#f88253ff', '#f88353ff', '#f98454ff', '#f98454ff', '#f98555ff', '#fa8655ff', '#fa8755ff', '#fa8756ff', '#fa8856ff', '#fb8957ff', '#fb8957ff', '#fb8a57ff', '#fc8b58ff', '#fc8c58ff', '#fc8c59ff', '#fc8d59ff', '#fd8e59ff', '#fd8f5aff', '#fd8f5aff', '#fd905bff', '#fd915bff', '#fd915cff', '#fd925cff', '#fd935dff', '#fd935dff', '#fd945dff', '#fd955eff', '#fd955eff', '#fd965fff', '#fd975fff', '#fd9760ff', '#fd9860ff', '#fd9960ff', '#fd9961ff', '#fd9a61ff', '#fd9b62ff', '#fd9b62ff', '#fd9c63ff', '#fd9d63ff', '#fd9d64ff', '#fd9e64ff', '#fd9f64ff', '#fd9f65ff', '#fda065ff', '#fda166ff', '#fda166ff', '#fda267ff', '#fda367ff', '#fda368ff', '#fda468ff', '#fda568ff', '#fda569ff', '#fda669ff', '#fda76aff', '#fda76aff', '#fda86bff', '#fda96bff', '#fda96cff', '#fdaa6cff', '#fdab6cff', '#fdab6dff', '#fdac6dff', '#fdad6eff', '#fdad6eff', '#fdae6fff', '#fdaf6fff', '#fdaf70ff', '#fdb070ff', '#fdb170ff', '#fdb171ff', '#fdb271ff', '#fdb372ff', '#fdb372ff', '#fdb473ff', '#fdb573ff', '#fdb574ff', '#fdb674ff', '#fdb774ff', '#feb775ff', '#feb875ff', '#feb976ff', '#feb976ff', '#feba77ff', '#febb77ff', '#febb77ff', '#febc78ff', '#febd78ff', '#febd79ff', '#febe79ff', '#febf7aff', '#febf7aff', '#fec07bff', '#fec17bff', '#fec17bff', '#fec27cff', '#fec37cff', '#fec37dff', '#fec47dff', '#fec57eff', '#fec57eff', '#fec67fff', '#fec77fff', '#fec77fff', '#fec880ff', '#fec980ff', '#fec981ff', '#feca81ff', '#fecb82ff', '#fecb82ff', '#fecc83ff', '#fecd83ff', '#fecd83ff', '#fece84ff', '#fecf84ff', '#fecf85ff', '#fed085ff', '#fed186ff', '#fed186ff', '#fed287ff', '#fed387ff', '#fed387ff', '#fed488ff', '#fed588ff', '#fed589ff', '#fed689ff', '#fed78aff', '#fed78aff', '#fed88bff', '#fed98bff', '#fed98bff', '#feda8cff', '#fedb8cff', '#fedb8dff', '#fedc8dff', '#fedd8eff', '#fedd8eff', '#fede8fff', '#fedf8fff', '#fedf8fff', '#fee090ff', '#fee090ff', '#fde091ff', '#fce092ff', '#fbdf92ff', '#fbdf93ff', '#fadf93ff', '#f9df94ff', '#f8de95ff', '#f7de95ff', '#f6de96ff', '#f5de96ff', '#f4dd97ff', '#f4dd98ff', '#f3dd98ff', '#f2dd99ff', '#f1dc99ff', '#f0dc9aff', '#efdc9bff', '#eedb9bff', '#eddb9cff', '#eddb9cff', '#ecdb9dff', '#ebda9eff', '#eada9eff', '#e9da9fff', '#e8da9fff', '#e7d9a0ff', '#e6d9a1ff', '#e5d9a1ff', '#e5d9a2ff', '#e4d8a2ff', '#e3d8a3ff', '#e2d8a4ff', '#e1d7a4ff', '#e0d7a5ff', '#dfd7a5ff', '#ded7a6ff', '#ded6a7ff', '#ddd6a7ff', '#dcd6a8ff', '#dbd6a9ff', '#dad5a9ff', '#d9d5aaff', '#d8d5aaff', '#d7d5abff', '#d7d4acff', '#d6d4acff', '#d5d4adff', '#d4d3adff', '#d3d3aeff', '#d2d3afff', '#d1d3afff', '#d0d2b0ff', '#d0d2b0ff', '#cfd2b1ff', '#ced2b2ff', '#cdd1b2ff', '#ccd1b3ff', '#cbd1b3ff', '#cad1b4ff', '#c9d0b5ff', '#c9d0b5ff', '#c8d0b6ff', '#c7d0b6ff', '#c6cfb7ff', '#c5cfb8ff', '#c4cfb8ff', '#c3ceb9ff', '#c2ceb9ff', '#c2cebaff', '#c1cebbff', '#c0cdbbff', '#bfcdbcff', '#becdbcff', '#bdcdbdff', '#bcccbeff', '#bbccbeff', '#bbccbfff', '#baccbfff', '#b9cbc0ff', '#b8cbc1ff', '#b7cbc1ff', '#b6cac2ff', '#b5cac2ff', '#b4cac3ff', '#b3cac4ff', '#b3c9c4ff', '#b2c9c5ff', '#b1c9c5ff', '#b0c9c6ff', '#afc8c7ff', '#aec8c7ff', '#adc8c8ff', '#acc8c8ff', '#acc7c9ff', '#abc7caff', '#aac7caff', '#a9c6cbff', '#a8c6ccff', '#a7c6ccff', '#a6c6cdff', '#a5c5cdff', '#a5c5ceff', '#a4c5cfff', '#a3c5cfff', '#a2c4d0ff', '#a1c4d0ff', '#a0c4d1ff', '#9fc4d2ff', '#9ec3d2ff', '#9ec3d3ff', '#9dc3d3ff', '#9cc3d4ff', '#9bc2d5ff', '#9ac2d5ff', '#99c2d6ff', '#98c1d6ff', '#97c1d7ff', '#97c1d8ff', '#96c1d8ff', '#95c0d9ff', '#94c0d9ff', '#93c0daff', '#92c0dbff', '#91bfdbff', '#91bfdbff', '#90bedbff', '#8fbedaff', '#8fbddaff', '#8ebcdaff', '#8ebcdaff', '#8dbbd9ff', '#8cbbd9ff', '#8cbad9ff', '#8bb9d8ff', '#8ab9d8ff', '#8ab8d8ff', '#89b8d7ff', '#89b7d7ff', '#88b6d7ff', '#87b6d6ff', '#87b5d6ff', '#86b5d6ff', '#86b4d5ff', '#85b3d5ff', '#84b3d5ff', '#84b2d5ff', '#83b2d4ff', '#83b1d4ff', '#82b1d4ff', '#81b0d3ff', '#81afd3ff', '#80afd3ff', '#7faed2ff', '#7faed2ff', '#7eadd2ff', '#7eacd1ff', '#7dacd1ff', '#7cabd1ff', '#7cabd0ff', '#7baad0ff', '#7ba9d0ff', '#7aa9d0ff', '#79a8cfff', '#79a8cfff', '#78a7cfff', '#78a6ceff', '#77a6ceff', '#76a5ceff', '#76a5cdff', '#75a4cdff', '#74a3cdff', '#74a3ccff', '#73a2ccff', '#73a2ccff', '#72a1cbff', '#71a0cbff', '#71a0cbff', '#709fcaff', '#709fcaff', '#6f9ecaff', '#6e9dcaff', '#6e9dc9ff', '#6d9cc9ff', '#6d9cc9ff', '#6c9bc8ff', '#6b9ac8ff', '#6b9ac8ff', '#6a99c7ff', '#6999c7ff', '#6998c7ff', '#6897c6ff', '#6897c6ff', '#6796c6ff', '#6696c5ff', '#6695c5ff', '#6595c5ff', '#6594c5ff', '#6493c4ff', '#6393c4ff', '#6392c4ff', '#6292c3ff', '#6291c3ff', '#6190c3ff', '#6090c2ff', '#608fc2ff', '#5f8fc2ff', '#5e8ec1ff', '#5e8dc1ff', '#5d8dc1ff', '#5d8cc0ff', '#5c8cc0ff', '#5b8bc0ff', '#5b8ac0ff', '#5a8abfff', '#5a89bfff', '#5989bfff', '#5888beff', '#5887beff', '#5787beff', '#5786bdff', '#5686bdff', '#5585bdff', '#5584bcff', '#5484bcff', '#5383bcff', '#5383bbff', '#5282bbff', '#5281bbff', '#5181baff', '#5080baff', '#5080baff', '#4f7fbaff', '#4f7eb9ff', '#4e7eb9ff', '#4d7db9ff', '#4d7db8ff', '#4c7cb8ff', '#4b7cb8ff', '#4b7bb7ff', '#4a7ab7ff', '#4a7ab7ff', '#4979b6ff', '#4879b6ff', '#4878b6ff', '#4777b5ff', '#4777b5ff', '#4676b5ff', '#4576b5ff', '#4575b4ff']);
+    
+
+    color_map_37fd4ddadcce398fb6063814fefffe2b.x = d3.scale.linear()
+              .domain([1.533, 2.048])
+              .range([0, 450 - 50]);
+
+    color_map_37fd4ddadcce398fb6063814fefffe2b.legend = L.control({position: 'topright'});
+    color_map_37fd4ddadcce398fb6063814fefffe2b.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_37fd4ddadcce398fb6063814fefffe2b.legend.addTo(map_b03a6034a48ac8be886e5788b0b3ff71);
+
+    color_map_37fd4ddadcce398fb6063814fefffe2b.xAxis = d3.svg.axis()
+        .scale(color_map_37fd4ddadcce398fb6063814fefffe2b.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([1.533, 1.66175, 1.7905, 1.91925, 2.048]);
+
+    color_map_37fd4ddadcce398fb6063814fefffe2b.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_37fd4ddadcce398fb6063814fefffe2b.g = color_map_37fd4ddadcce398fb6063814fefffe2b.svg.append("g")
+        .attr("class", "key")
+        .attr("fill", "black")
+        .attr("transform", "translate(25,16)");
+
+    color_map_37fd4ddadcce398fb6063814fefffe2b.g.selectAll("rect")
+        .data(color_map_37fd4ddadcce398fb6063814fefffe2b.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_37fd4ddadcce398fb6063814fefffe2b.x(color_map_37fd4ddadcce398fb6063814fefffe2b.color.domain()[i - 1]) : color_map_37fd4ddadcce398fb6063814fefffe2b.x.range()[0],
+            x1: i < color_map_37fd4ddadcce398fb6063814fefffe2b.color.domain().length ? color_map_37fd4ddadcce398fb6063814fefffe2b.x(color_map_37fd4ddadcce398fb6063814fefffe2b.color.domain()[i]) : color_map_37fd4ddadcce398fb6063814fefffe2b.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_37fd4ddadcce398fb6063814fefffe2b.g.call(color_map_37fd4ddadcce398fb6063814fefffe2b.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .attr("fill", "black")
+        .text("Predicted Maize Yield (t/ha)");
+</script>
+</html>
